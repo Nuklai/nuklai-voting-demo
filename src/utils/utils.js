@@ -1,6 +1,7 @@
 import { database } from '../services/firebase';
 import { ref, push, get, child } from 'firebase/database';
 import { getBalanceAndAddress } from '../services/nuklaiService';
+import toast from 'react-hot-toast';
 
 export async function signAndGetBalance(privateKey, vote) {
   try {
@@ -33,6 +34,7 @@ export async function signAndGetBalance(privateKey, vote) {
       timestamp: new Date().toISOString(),
     });
 
+    toast.success('Vote recorded successfully');
     return result;
   } catch (error) {
     console.error('An error occurred:', error);
