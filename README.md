@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Nuklai Voting dApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A decentralized voting dApp running on the Nuklai blockchain built with React + Firebase, thanks to @nuklai-js-sdk & @hyperchain-js-sdk.  
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- ReactJS
+- Tailwind
+- Firebase Realtime Database
+- Nuklai SDK
+- HyperchainSDK
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clone the repository
+2. Install dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+   npm install
+```
 
-### `npm test`
+3. Set up Firebase:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   - Create a Firebase project
+   - Add your Firebase config to `src/services/firebase.js`
+4. Set up Nuklai SDK:
 
-### `npm run build`
+   - Make sure you have the correct NuklaiVM credentials in `src/services/nuklaiService.js`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Running the App
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Building for Production
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Key Components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `App.js`: Main component.
+- `Card.js`: Voting interface.
+- `Votes.js`: Displays voting results.
+- `firebase.js`: Firebase config.
+- `nuklaiService.js`: Initializing the Nuklai SDK and balance related logic.
+- `utils.js`: Utility functions for vote processing via the NuklaiVM, Firebase storage logic.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Key Functions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `getBalanceAndAddress`: Retrieves the user's Nuklai address and balance from the NuklaiVM
+- `signAndGetBalance`: Processes the vote and updates Firebase.
 
-## Learn More
+### Ext Libs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `recharts`: For the pie-chart.
+- `react-hot-toast`: For notifications.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Notes
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> This dApp is for demo purposes only. All votes are via the NuklaiVM Testnet.
