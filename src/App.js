@@ -31,11 +31,19 @@ function AppContent() {
       <Navbar />
       <div className="flex-grow flex items-center justify-center px-4">
         <Routes>
+          
           <Route 
             path="/" 
             element={
               <div className="w-full max-w-md">
-                <h2 className="text-2xl font-bold mb-8 text-center text-white">Verify Your Nuklai Private Key To Vote</h2>
+                <div className="pb-24 flex justify-center">
+                  <img 
+                    src="https://cdn.prod.website-files.com/6553a47b7cee77d6e1f583d5/667053e5a5e62323d63ece25_Logos.svg" 
+                    alt="NuklaiVM" 
+                    className="w-48 h-auto"
+                  />
+                </div>
+                <h2 className="text-1xl font-bold mb-8 text-center text-white">Verify Your NuklaiVM Private Key To Vote</h2>
                 <Card
                   onButtonClick={handleVote}
                   result={result}

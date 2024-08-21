@@ -90,7 +90,7 @@ function Card({ onButtonClick, result, loading }) {
         <div className="flex flex-col items-center">
           <input
             type="password"
-            placeholder="Your Nuklai private key"
+            placeholder="Your NuklaiVM private key"
             value={inputValue}
             onChange={handleInputChange}
             className="w-full p-3 mb-6 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
