@@ -37,7 +37,24 @@ function Card({ onButtonClick, result, loading }) {
 
   const handleSubmit = () => {
     if (!selectedVote) {
-      toast.error('Please choose an option');
+      toast.error("Please choose an option");
+      return;
+    }
+
+    const neededBalance = 0.2;
+
+    if (userInfo.balance < neededBalance) {
+      const remainingBalance = neededBalance - userInfo.balance;
+      const formatremainingBalance = remainingBalance
+        .toFixed(9)
+        .replace(/0+$/, "");
+      toast.error(
+        `Insufficient NAI balance. You have ${userInfo.balance.toFixed(
+          9
+        )} NAI. ` +
+          `You need at least ${neededBalance} NAI to vote. ` +
+          `You're short by ${formatremainingBalance} NAI.`
+      );
       return;
     }
 
